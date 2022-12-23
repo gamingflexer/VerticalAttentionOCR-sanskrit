@@ -1,37 +1,3 @@
-#  Copyright Université de Rouen Normandie (1), INSA Rouen (2),
-#  tutelles du laboratoire LITIS (1 et 2)
-#  contributors :
-#  - Denis Coquenet
-#
-#
-#  This software is a computer program written in XXX whose purpose is XXX.
-#
-#  This software is governed by the CeCILL-C license under French law and
-#  abiding by the rules of distribution of free software.  You can  use,
-#  modify and/ or redistribute the software under the terms of the CeCILL-C
-#  license as circulated by CEA, CNRS and INRIA at the following URL
-#  "http://www.cecill.info".
-#
-#  As a counterpart to the access to the source code and  rights to copy,
-#  modify and redistribute granted by the license, users are provided only
-#  with a limited warranty  and the software's author,  the holder of the
-#  economic rights,  and the successive licensors  have only  limited
-#  liability.
-#
-#  In this respect, the user's attention is drawn to the risks associated
-#  with loading,  using,  modifying and/or developing or reproducing the
-#  software by the user in light of its specific status of free software,
-#  that may mean  that it is complicated to manipulate,  and  that  also
-#  therefore means  that it is reserved for developers  and  experienced
-#  professionals having in-depth computer knowledge. Users are therefore
-#  encouraged to load and test the software's suitability as regards their
-#  requirements in conditions enabling the security of their systems and/or
-#  data to be ensured and,  more generally, to use and operate it in the
-#  same conditions as regards security.
-#
-#  The fact that you are presently reading this means that you have had
-#  knowledge of the CeCILL-C license and that you accept its terms.
-
 import os
 import shutil
 import xml.etree.ElementTree as ET
@@ -40,13 +6,15 @@ import pickle
 import numpy as np
 from PIL import Image
 
+source_main_folder = "/content/VerticalAttentionOCR/Datasets/"
+
 
 def format_IAM_line():
     """
     Format the IAM dataset at line level with the commonly used split (6,482 for train, 976 for validation and 2,915 for test)
     """
-    source_folder = "raw/IAM"
-    target_folder = "formatted/IAM_lines"
+    source_folder = source_main_folder + "raw/IAM"
+    target_folder =  source_main_folder + "formatted/IAM_lines"
     tar_filename = "lines.tgz"
     line_folder_path = os.path.join(target_folder, "lines")
 
@@ -101,8 +69,8 @@ def format_IAM_paragraph():
     """
     Format the IAM dataset at paragraph level with the commonly used split (747 for train, 116 for validation and 336 for test)
     """
-    source_folder = "raw/IAM"
-    target_folder = "formatted/IAM_paragraph"
+    source_folder = source_main_folder + "raw/IAM"
+    target_folder =  source_main_folder + "formatted/IAM_paragraph"
     img_folder_path = os.path.join(target_folder, "images")
 
     os.makedirs(target_folder, exist_ok=True)
@@ -185,8 +153,8 @@ def format_RIMES_line():
     Format the RIMES dataset at line level with the commonly used split (the last 100 paragraph training samples are taken for the valid set)
     resulting in: 10,532 for training, 801 for validation and 778 for test.
     """
-    source_folder = "raw/RIMES"
-    target_folder = "formatted/RIMES_lines"
+    source_folder = source_main_folder + "raw/RIMES"
+    target_folder =  source_main_folder + "formatted/RIMES_lines"
     img_folder_path = os.path.join(target_folder, "images_gray")
     os.makedirs(target_folder, exist_ok=True)
 
@@ -265,8 +233,8 @@ def format_RIMES_paragraph():
     Format the RIMES dataset at paragraph level with the official split (the last 100 training samples are taken for the valid set)
     resulting in 1,400 for training, 100 for validation and 100 for test
     """
-    source_folder = "raw/RIMES"
-    target_folder = "formatted/RIMES_paragraph"
+    source_folder = source_main_folder + "raw/RIMES"
+    target_folder =  source_main_folder + "formatted/RIMES_paragraph"
     img_folder_path = os.path.join(target_folder, "images_gray")
     os.makedirs(target_folder, exist_ok=True)
 
@@ -346,8 +314,8 @@ def format_READ2016_line():
     """
     Format the READ 2016 dataset at line level with the official split (8,349 for training, 1,040 for validation and 1,138 for test)
     """
-    source_folder = "raw/READ_2016"
-    target_folder = "formatted/READ_2016_lines"
+    source_folder = source_main_folder + "raw/READ_2016"
+    target_folder =  source_main_folder + "formatted/READ_2016_lines"
     if os.path.isdir(target_folder):
         shutil.rmtree(target_folder)
     os.makedirs(target_folder)
@@ -432,8 +400,8 @@ def format_READ2016_paragraph():
     """
     Format the READ 2016 dataset at paragraph level with the official split (1,584 for training 179, for validation and 197 for test)
     """
-    source_folder = "raw/READ_2016"
-    target_folder = "formatted/READ_2016_paragraph"
+    source_folder = source_main_folder + "raw/READ_2016"
+    target_folder =  source_main_folder + "formatted/READ_2016_paragraph"
     if os.path.isdir(target_folder):
         shutil.rmtree(target_folder)
     os.makedirs(target_folder)
@@ -513,7 +481,7 @@ def format_READ2016_paragraph():
 
 if __name__ == "__main__":
 
-    format_IAM_line()
+    # format_IAM_line()
     # format_IAM_paragraph()
 
     # format_RIMES_line()
