@@ -1,8 +1,14 @@
 # Vertical Attention Network: an end-to-end model for handwritten text recognition at paragraph level.
 This repository is a public implementation of the paper: "End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network".
 
-To discover my other works, here is my [academic page](https://factodeeplearning.github.io/).
+## Notebooks (Google Colab)
 
+Train Notebook
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1HSvaSBI-jhE35fwFw3HOHHBVwimN7WFk#scrollTo=7YISIbXFiwQ8)
+
+## Intro
+
+To discover my other works, here is my [academic page](https://factodeeplearning.github.io/).
 The paper is available at https://arxiv.org/abs/2012.03868.
 
 [![Click to see demo](https://img.youtube.com/vi/OXi1birmbuw/0.jpg)](https://www.youtube.com/watch?v=OXi1birmbuw)
